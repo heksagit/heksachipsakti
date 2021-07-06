@@ -2,32 +2,30 @@
 PT Asuransi Heksa Insurance X Chip Sakti 
 ___________________________________________________________
 
-### Validate aplication Data
+### Request List Product
 #### URL & Params Required:
 ##### - Features
   - Sender : **Chip Sakti**
   - Target API : **Heksa Insurance**
-  - Validate Submit Data aplication from **Chip Sakti** to **Heksa Insurance** API for All Product
+  - Request List Product from Heksa Insurance
 #
 
 ##### - PRODUK
-  - Heksa Aktif Plus
-  - Heksa Rencana Aman
-  - Heksa Perisai Diri
+  - Asuransi Micro Perisai Diri Extra
 #
 
 ##### - Endpoint
   - **PRODUCTION**
 ```sh
-https://heksainsurance.co.id/heksaapi/api/pos/validatedata
+https://store.heksainsurance.co.id/partner/api/chipsakti/reqproduct
 ```
   - **DEVELOPMENT**
 ```sh
-http://103.58.146.64/heksaapi/api/pos/validatedata
+http://103.58.146.64/heksa-partner/api/chipsakti/reqproduct
 ```
 #
 
-##### - Method : POST
+##### - Method : GET
 #
 
 ##### - Authorization Basic Auth
@@ -37,99 +35,34 @@ http://103.58.146.64/heksaapi/api/pos/validatedata
 |username| [text] | Y |150 |Username untuk basic auth - diberi oleh heksa insurance |
 |password|[text] | Y |150 |Password basic auth - diberi oleh heksa insurance |
 
-#
-##### - Body Structure
-
-| Params | | Data Type | Mandatory | Length | Description |
-|--|--|--|--|--|--|
-|MerchantID| | [text] | Y |50 | ID Merchant diberikan oleh Heksa Insurance|
-|SessionID| | [text] | Y |50 | Digenerate Oleh Chip Sakti harus Uniq untuk setiap request|
-|WORDS| | [text] | Y |254 | enkripsi kombinasi SessionID+Premium+MerchantID+Sharedkey SharedKey diberikan oleh heksa insurance|
-|ProductCode| | [text] | Y |150 | Kode Produk Asuransi|
-|Premium| |[decimal]| Y | | |
-|IsPrintPolicy| |[number]| Y | | 1 = Jika Polis ingin dicetak, 0 = Jika Polis tidak ingin dicetak |
-|PolicyPrintingCost| |[decimal]| Y | | Biaya Cetak Polis |
-|TransactionDate| |[text] | Y | | format dd/MM/yyyy |
-|InsuredRelation| |[text] | Y | 100 | Hubungan Pemegang Polis dengan Tertanggung (Lihat List) |
-|AplicationType| |[text] | Y | 5 | Tipe Pembelian : 1 = Agen Sendiri, 2 = Orang Lain |
-|AgenCode| |[text] | Y | 50 | Di isi Kode Agen yang punya Account |
-|PolicyHolder| |[jsonObject] | Y | | Pemegang Polis |
-|| FullName |[text] | Y | 250 | |
-|| Sex |[text] | Y | | P/W |
-|| Email |[text] | Y | 50 | |
-|| Phone |[text] | Y | 15 | |
-|| KTPNo |[text] | Y | 20 | |
-|| NPWP |[text] | N | 20 | |
-|| BirthPlace |[text] | Y |150| Tempat tanggal lahir|
-|| DOB |[date] | Y | | Tanggal Lahir format dd/MM/yyyy|
-|| Address |[text] | Y | 500 | Alamat Sesuai Identitas |
-|| ProvinceName |[text] | Y | 100 | Provinsi Sesuai Identitas  |
-|| CityName |[text] | Y | 100 | Kota Sesuai Identitas |
-|| District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
-|| SourcesOfFinance |[text] | Y | 100 | Sumber Dana (Lihat List) |
-|| SourcesOfFinanceOtherName |[text] | Y | 150 | Sumber Dana Lainnya hanya diisi jika sumber dana dipilih lainnya |
-|| MonthlyIncome |[text] | Y | 100 | Penghasilan Perbulan (Lihat List) |
-|| Job |[text] | Y | 100 | Pekerjaan Nasabah (Lihat List) |
-|| JobOtherName |[text] | Y | 150 | Pekerjaan Lainnya hanya diisi jika Pekerjaan dipilih lainnya |
-|| FiledOfWork |[text] | Y | 100 | Bidang Pekerjaan (Lihat List) |
-|| FiledOfWorkOtherName |[text] | Y | 150 | Bidang Pekerjaan Lainnya Hanya diisi jika bidang pekerjaan dipilih lainnya |
-|| CorrespondenceAddress |[text] | Y | 500 | Alamat Pengiriman Polis |
-|| CorrespondenceProvinceName |[text] | Y | 100 | Provinsi Pengiriman Polis  |
-|| CorrespondenceCityName |[text] | Y | 100 | Kota Pengiriman Polis |
-|| CorrespondenceDistrict |[text] | Y | 100 | Kecamatan Pengiriman Polis |
-|| MaritalStatus |[text] | Y | 50 | Status Pernikahan (Lihat List)|
-|Insured| |[jsonObject] | Y | | Tertanggung |
-|| FullName |[text] | Y | 250 | |
-|| Sex |[text] | Y | | P/W |
-|| Email |[text] | Y | 50 | |
-|| Phone |[text] | Y | 15 | |
-|| KTPNo |[text] | Y | 20 | |
-|| NPWP |[text] | N | 20 | |
-|| BirthPlace |[text] | Y |150| Tempat tanggal lahir|
-|| DOB |[text] | Y | | Tanggal Lahir format dd/MM/yyyy|
-|| Address |[text] | Y | 500 | Alamat Sesuai Identitas |
-|| ProvinceName |[text] | Y | 100 | Provinsi Sesuai Identitas  |
-|| CityName |[text] | Y | 100 | Kota Sesuai Identitas |
-|| District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
-|| Height |[number]| Y | | Tinggi Badan |
-|| Weight |[number]| Y | | Berat Badan |
-|| MaritalStatus |[text] | Y | 50 | Status Pernikahan (Lihat List)|
-|Beneficiary| |[jsonObject] | Y | | Ahli Waris |
-|| FullName |[text] | Y | 50 | |
-|| Sex |[text] | Y | | P/W |
-|| DOB |[text] | Y | | format dd/MM/yyyy|
-|| Relation |[text] | Y | | Hubungan Ahliwaris dengan Tertanggung (Lihat List)|
-|Referral| |[jsonObject] | Y | | Data Pemberi Referral |
-|| Name |[text] | N | |  Nama Pemberi Referral|
-|| Code |[text] | Y | | Code Referral di isi Kode Agen pemberi referral |
-|| BankAccountNo |[text] | Y | | No Account CGS Referral di isi No Account pemberi referral |
-|| Email |[text] | N | | Email Referral |
-|| Phone |[text] | N | | Nomor Handphone Referral |
-#
-
 ##### - Result Structure
 | Params | | Data Type | Mandatory | Length | Description |
 |--|--|--|--|--|--|
-| StatusCode |  | [Text] | Y | 4 | "00" = Berhasil, "500" = Gagal |
-| StatusMessage |  | [Text] | Y | 100 |  |
-| Value |  | [Text] | Y | 1500 | string object json |
-|| List Error | [Array String] | Y | 100 | List Error |
+| ProductCode |  | [Text] | Y | 10 | Kode Produk |
+| ProductName |  | [Text] | Y | 100 | Nama Produk |
+| ProductDescription |  | [Text] | Y | 1500 | Deskripsi Produk |
+| ProductTermofService |  | [Text] | Y | 1500 | Term of Service Produk |
+| ProductNote |  | [Text] | Y | 1500 | Statement ini di taruh di bukti pembayaran yang nasabah terima |
+| ProductBannerUrl |  | [Text] | Y | 500 | URL Banner Image |
 #
 
 ###### Success Response
 ```sh
 {
-    "StatusCode": "00",
-    "StatusMessage": "Data valid",
-    "Value" : ""
+  "ProductCode": "HI-X11",
+  “ProductName": "Asuransi Micro Perisai Diri Extra 5000",
+  “ProductDescription": "Produk asuransi mikro yang memberikan manfaat perlindungan atas risiko meninggal dunia karena kecelakaan pada masa pertanggungan, dengan perluasan pilihan manfaat Meninggal dunia karena alami/sakit (bukan karena kecelakaan) dan/atau Cacat tetap dan total karena kecelakaan dan/atau Penggantian biaya pengobatan/perawatan di rumah sakit karena kecelakaan dan/atau Cacat tetap dan total akibat penyakit",
+  “ProductTermofService": "Saya setuju pertanggungan asuransi dimulai sejak premi dibayarkan dan aktivasi pengajuan asuransi berhasil dilakukan.",
+  “ProductNote": ""Segera aktivasi asuransi Anda melalui link berikut ini :https://heksainsurance.co.id/perisaidiri/extra/aktivasi*) Apabila dalam waktu 2 hari tidak melakukan aktivasi maka pembelian ini dibatalkan otomatis dan premi akan dikembalikan ke rekening Anda"",
+  “ProductBannerUrl": "https://heksainsurance.co.id/assets/image/produk/heksa-mikroPerisaiDiriExtra.png"
 }
 ```
 #
 ###### Failed Response
 ```sh
 {
-    "StatusCode": "50",
-    "StatusMessage": "Data tidak valid",
+    "StatusCode": "400",
+    "StatusMessage": "Internal Error",
     "Value" : [
       array string error
     ]
