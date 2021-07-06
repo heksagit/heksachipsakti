@@ -230,3 +230,5 @@ Saya setuju pertanggungan asuransi dimulai sejak premi dibayarkan dan aktivasi p
 Segera aktivasi asuransi Anda melalui link berikut ini :https://heksainsurance.co.id/perisaidiri/extra/aktivasi
 *) Apabila dalam waktu 2 hari tidak melakukan aktivasi maka pembelian ini dibatalkan otomatis dan premi akan dikembalikan ke rekening Anda
 
+#### FLOW SYSTEM
+![image](https://user-images.githubusercontent.com/42398592/124553507-06aa1000-de5f-11eb-9a0c-7303d8d05234.png)
