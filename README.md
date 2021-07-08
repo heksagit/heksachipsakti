@@ -53,8 +53,8 @@ http://103.58.146.64/heksa-partner/api/chipsakti/reqproduct
 ```sh
 {
    "ProductCode":"HI-X11",
-   "ProductName":"Asuransi Micro Perisai Diri Extra 5000",
-   "ProductDescription":"Produk asuransi mikro yang memberikan manfaat perlindungan atas risiko meninggal dunia karena kecelakaan pada masa pertanggungan, dengan perluasan pilihan manfaat Meninggal dunia karena alami/sakit (bukan karena kecelakaan) dan/atau Cacat tetap dan total karena kecelakaan dan/atau Penggantian biaya pengobatan/perawatan di rumah sakit karena kecelakaan dan/atau Cacat tetap dan total akibat penyakit",
+   "ProductName":"Asuransi Mikro Perisai Diri Extra 5000",
+   "ProductDescription":"Produk asuransi mikro yang memberikan manfaat perlindungan atas risiko meninggal dunia karena kecelakaan dan Meninggal dunia karena alami/sakit (bukan karena kecelakaan) pada masa pertanggungan.",
    "ProductTermofService":"Saya setuju pertanggungan asuransi dimulai sejak premi dibayarkan dan aktivasi pengajuan asuransi berhasil dilakukan.",
    "ProductNote":"Segera aktivasi asuransi Anda melalui link berikut ini :https://heksainsurance.co.id/perisaidiri/extra/aktivasi*) Apabila dalam waktu 2 hari tidak melakukan aktivasi maka pembelian ini dibatalkan otomatis dan premi akan dikembalikan ke rekening Anda",
    "ProductBannerUrl":"https://heksainsurance.co.id/assets/image/produk/heksa-mikroPerisaiDiriExtra.png",
