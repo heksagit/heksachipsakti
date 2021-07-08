@@ -11,7 +11,7 @@ ___________________________________________________________
 #
 
 ##### - PRODUK
-  - Asuransi Micro Perisai Diri Extra
+  - Asuransi Mikro Perisai Diri Extra
 #
 
 ##### - Endpoint
@@ -87,7 +87,7 @@ ____________________________________________________________________
 #
 
 ##### - PRODUK
-  - Asuransi Micro Perisai Diri Extra
+  - Asuransi Mikro Perisai Diri Extra
 #
 
 
@@ -176,7 +176,7 @@ ____________________________________________________________________
 #
 
 ##### - PRODUK
-  - Asuransi Micro Perisai Diri Extra
+  - Asuransi Mikro Perisai Diri Extra
 #
 
 ##### - Endpoint
