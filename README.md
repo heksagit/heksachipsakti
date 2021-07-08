@@ -44,17 +44,23 @@ http://103.58.146.64/heksa-partner/api/chipsakti/reqproduct
 | ProductTermofService |  | [Text] | Y | 1500 | Term of Service Produk |
 | ProductNote |  | [Text] | Y | 1500 | Statement ini di taruh di bukti pembayaran yang nasabah terima |
 | ProductBannerUrl |  | [Text] | Y | 500 | URL Banner Image |
+| ProductPremium |  | [Decimal] | Y |  | Harga Premi Produk |
+| Update_at |  | [Date] | Y | ISO 8601 standard | Tanggal produk terakhir di update |
+| IsActive |  | [Boolean] | Y |True/False | Status Aktiv Produk |
 #
 
 ###### Success Response
 ```sh
 {
-  "ProductCode": "HI-X11",
-  “ProductName": "Asuransi Micro Perisai Diri Extra 5000",
-  “ProductDescription": "Produk asuransi mikro yang memberikan manfaat perlindungan atas risiko meninggal dunia karena kecelakaan pada masa pertanggungan, dengan perluasan pilihan manfaat Meninggal dunia karena alami/sakit (bukan karena kecelakaan) dan/atau Cacat tetap dan total karena kecelakaan dan/atau Penggantian biaya pengobatan/perawatan di rumah sakit karena kecelakaan dan/atau Cacat tetap dan total akibat penyakit",
-  “ProductTermofService": "Saya setuju pertanggungan asuransi dimulai sejak premi dibayarkan dan aktivasi pengajuan asuransi berhasil dilakukan.",
-  “ProductNote": ""Segera aktivasi asuransi Anda melalui link berikut ini :https://heksainsurance.co.id/perisaidiri/extra/aktivasi*) Apabila dalam waktu 2 hari tidak melakukan aktivasi maka pembelian ini dibatalkan otomatis dan premi akan dikembalikan ke rekening Anda"",
-  “ProductBannerUrl": "https://heksainsurance.co.id/assets/image/produk/heksa-mikroPerisaiDiriExtra.png"
+   "ProductCode":"HI-X11",
+   "ProductName":"Asuransi Micro Perisai Diri Extra 5000",
+   "ProductDescription":"Produk asuransi mikro yang memberikan manfaat perlindungan atas risiko meninggal dunia karena kecelakaan pada masa pertanggungan, dengan perluasan pilihan manfaat Meninggal dunia karena alami/sakit (bukan karena kecelakaan) dan/atau Cacat tetap dan total karena kecelakaan dan/atau Penggantian biaya pengobatan/perawatan di rumah sakit karena kecelakaan dan/atau Cacat tetap dan total akibat penyakit",
+   "ProductTermofService":"Saya setuju pertanggungan asuransi dimulai sejak premi dibayarkan dan aktivasi pengajuan asuransi berhasil dilakukan.",
+   "ProductNote":"Segera aktivasi asuransi Anda melalui link berikut ini :https://heksainsurance.co.id/perisaidiri/extra/aktivasi*) Apabila dalam waktu 2 hari tidak melakukan aktivasi maka pembelian ini dibatalkan otomatis dan premi akan dikembalikan ke rekening Anda",
+   "ProductBannerUrl":"https://heksainsurance.co.id/assets/image/produk/heksa-mikroPerisaiDiriExtra.png",
+   "ProductPremium":5000,
+   "Update_at":"2021-07-02T00:00:00Z",
+   "IsActive":true
 }
 ```
 #
@@ -64,7 +70,7 @@ http://103.58.146.64/heksa-partner/api/chipsakti/reqproduct
     "StatusCode": "400",
     "StatusMessage": "Internal Error",
     "Value" : [
-      array string error
+      "array string error"
     ]
 }
 ```
@@ -113,7 +119,7 @@ http://103.58.146.64/heksa-partner/api/chipsakti/reqactivationcode
 | TransactionID |  | [Text] | Y | 30 | ID Transaksi digenerate oleh Chipsakti |
 | ProductCode |  | [Text] | Y | 10 | List Product dari Product yang heksa kirim |
 | PhoneNo |  | [Text] | Y | 20 | Nomor Telepon Nasabah Sesuai yang diinputkan Nasabah |
-| TransactionDate |  | [Text] | Y | dd/MM/yyyy HH:mm:ss | Tanggal dan Jam Trnsaksi Nasabah |
+| TransactionDate |  | [Date] | Y | ISO 8601 standard |Tanggal Transaksi Nasabah |
 | AgentID |  | [Text] | Y | 1500 | ID Agent atau ID User yang login ke Aplikasi Chipsakti |
 | AgentName |  | [Text] | Y | 500 | Nama Agent atau Nama User yang login ke aplikasi Chipsakti |
 #
@@ -124,7 +130,7 @@ http://103.58.146.64/heksa-partner/api/chipsakti/reqactivationcode
   "TransactionID": "xxxxxxxx",
   "ProductCode": "HI-X11",
   "PhoneNo": "82353162965",
-  "TransactionDate": "19/06/2021 6:16:35",
+  "TransactionDate": "2021-07-02T00:00:00Z",
   "AgentID": "988456746",
   "AgentName": "SAMSURIADI S"
 }
@@ -137,16 +143,16 @@ http://103.58.146.64/heksa-partner/api/chipsakti/reqactivationcode
 | TransactionID |  | [Text] | Y | 30 | ID Transaksi yang digenerate oleh Chipsakti |
 | ActivationCode |  | [Array Text] | Y | 100 | Kode aktivasi 5 digit huruf dan angka dikirim dalam Array String  |
 | ActivationUrl |  | [Text] | Y | 1500 | Url untuk nasabah melakukan aktivasi |
-| ActivationTimeOut |  | [Text] | Y | datetime | string format date time (dd-MM-yyyy HH:mm:ss) format jam 24Jam |
+| ActivationTimeOut |  | [Date] | Y | ISO 8601 standard | Tanggal Transaksi Timeout |
 #
 
 ###### Success Response
 ```sh
 {
   "TransactionID": "xxxxxxxx",
-  “ActivationCode": [“b97ca”,”dm87ba”],
-  “ActivationUrl:” https://heksainsurance.co.id/perisaidiri/extra/aktivasi”,
-  “ActiovationTimeOut:”02-07-2021 14:50:20”
+  "ActivationCode": ["b97ca","dm87ba"],
+  "ActivationUrl": "https://heksainsurance.co.id/perisaidiri/extra/aktivasi",
+  "ActiovationTimeOut":"2021-07-02T00:00:00Z",
 }
 ```
 #
@@ -208,9 +214,9 @@ Ditentukan oleh chipsakti
 ```sh
 {
   "TransactionID": "xxxxxxxx",
-  “ActivationCode": “b97ca",
-  “StatusCode": “400", 
-  “Note": “Transaksi Gagal, Usia Tidak Valid",
+  "ActivationCode": "b97ca",
+  "StatusCode": "400", 
+  "Note": "Transaksi Gagal, Usia Tidak Valid",
 }
 ```
 
